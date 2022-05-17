@@ -18,3 +18,5 @@
 *.yml
 *.env
 *.log
+
+!sample.yaml

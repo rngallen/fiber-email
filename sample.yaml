@@ -1,0 +1,10 @@
+EMAIL_HOST:
+  USER: "fiber@gmail.com"
+  PASSWORD: "123456"
+  SERVER: "smtp.gmail.com"
+  PORT: "587"
+
+
+
+SERVER:
+  PORT: ":3003"

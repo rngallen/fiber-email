@@ -2,7 +2,6 @@ package email
 
 import (
 	"log"
-	"sync"
 
 	"github.com/go-mail/mail"
 	"github.com/rngallen/fiber-email/config"
@@ -18,8 +17,6 @@ type UserList struct {
 	Subject string      `json:"subject"`
 	Body    string      `json:"body"`
 }
-
-var Wg sync.WaitGroup
 
 func SendNewsLetter(emailList []UserList) error {
 
@@ -46,7 +43,6 @@ func SendNewsLetter(emailList []UserList) error {
 
 	email := mail.NewMessage()
 	for index, user := range emailList {
-		Wg.Add(1)
 		email.SetHeader("From", username)
 		email.SetAddressHeader("To", user.To.Address, user.To.Name)
 		email.SetHeader("Subject", user.Subject)
